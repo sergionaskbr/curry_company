@@ -152,6 +152,11 @@ traffic_options = st.sidebar.multiselect(
     ['Low', 'Medium', 'High', 'Jam'],
     default='Low') # Default: valores que já aparecem automaticamente na caixa de seleção.
 st.sidebar.markdown("""---""")
+weather_options = st.sidebar.multiselect(
+    'Quais as condições climáticas',
+    ['conditions Cloudy', 'conditions Fog', 'conditions Sandstorms', 'conditions Stormy', 'conditions Sunny', 'conditions Windy'],
+    default='conditions Sunny') 
+st.sidebar.markdown("""---""")
 st.sidebar.markdown("### Powered by Comunidade DS")
 
 # Fazendo um DRILL DOWN nos dados - ele mostra todos os gráficos do Streamlit do início até a data que selecionarmos na barra do sidebar (date_slider).
@@ -163,6 +168,10 @@ df1 = df1.loc[linhas_selecionadas, :]
 
 #Filtro de trânsito:
 linhas_selecionadas = df1['Road_traffic_density'].isin(traffic_options) # Road_traffic_density está em >>> filtro traffic_options.
+df1 = df1.loc[linhas_selecionadas, :]
+
+# Filtro de clima:
+linhas_selecionadas = df1['Weatherconditions'].isin(weather_options) # Weatherconditions estão em >>> filtro weather_options.
 df1 = df1.loc[linhas_selecionadas, :]
 
 # =================
