@@ -31,6 +31,7 @@ st.markdown(
     ### Ask for Help
     - Time de Data Science do Discord: 
         - @sergionask
+
         
     Dados extraídos de Food Delivery Dataset (Kaggle) - https://www.kaggle.com/datasets/gauravmalik26/food-delivery-dataset/
         
