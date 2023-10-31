@@ -107,7 +107,7 @@ st.header('Marketplace - Visão Entregadores')
 image = Image.open('1.png') # Image é uma função da biblioteca PIL, open uma função (livro) dela, que abre fotos do meu computador.
 st.sidebar.image(image, width=120) 
 
-st.sidebar.markdown('# Cury Company')
+st.sidebar.markdown('# Curry Company')
 st.sidebar.markdown('## Fastest Delivery in Town')
 st.sidebar.markdown("""---""")
 st.sidebar.markdown('## Selecione uma data limite')
