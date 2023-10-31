@@ -18,7 +18,7 @@ st.write('# Curry Company Growth Dashboard')
 
 st.markdown(
     """
-    Growth Dashboard foi construído para acompanhar as métricas de crescimento da empresa Curry Company.
+    Growth Dashboard foi construído para acompanhar as métricas de crescimento da empresa fictícia Curry Company.
     ### Como utilizar esse Growth Dashboard?
     - Visão Empresa: 
         - Visão Gerencial: Métricas gerais de comportamento.
@@ -31,6 +31,7 @@ st.markdown(
     ### Ask for Help
     - Time de Data Science do Discord: 
         - @sergionask
+        
     Dados extraídos de Food Delivery Dataset (Kaggle) - https://www.kaggle.com/datasets/gauravmalik26/food-delivery-dataset/
         
 """)
