@@ -244,7 +244,7 @@ with tab1:
             st.plotly_chart(fig)        
 
         with col2:
-            st.markdown('##### Média e desvio padrão do tempo de entrega por cidade e tipo de pedido')
+            st.markdown('##### Média e desvio padrão do tempo de entrega por cidade e tipo de pedido (em mins)')
             df_aux = df1.loc[:, ['Time_taken(min)', 'City', 'Type_of_order']].groupby(['City', 'Type_of_order']).agg({'Time_taken(min)': ['mean', 'std']}) 
             df_aux.columns = ['avg_time', 'std_time'] 
             df_aux = df_aux.reset_index()
