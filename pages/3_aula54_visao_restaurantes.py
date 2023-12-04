@@ -203,65 +203,65 @@ df1 = df1.loc[linhas_selecionadas, :]
 # Layout da Página Principal do Streamlit - OS COMENTÁRIOS SÃO MUITO IMPORTANTES PARA ORGANIZARMOS NOSSO CÓDIGO!
 # =================
 
-    with st.container():
-        st.title('Overall Metrics')
-        col1, col2, col3 = st.columns(3)
+with st.container():
+    st.title('Overall Metrics')
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        delivery_unique = len(df1.loc[:, 'Delivery_person_ID'].unique())
+        col1.metric('Entregadores únicos', delivery_unique)
         
-        with col1:
-            delivery_unique = len(df1.loc[:, 'Delivery_person_ID'].unique())
-            col1.metric('Entregadores únicos', delivery_unique)
-            
-        with col2:
-            avg_distance = distance(df1, fig=False)
-            col2.metric('Distância média das entregas (em Km)', avg_distance)
-            
-        with col3:
-            df_aux = avg_std_time_delivery(df1, 'Yes', 'avg_time')
-            col3.metric('Tempo médio das entregas c/ Festival (em mins)', df_aux)
-
-        col4, col5, col6 = st.columns(3)
-            
-        with col4:
-            df_aux = avg_std_time_delivery(df1, 'Yes', 'std_time')
-            col4.metric('Desvio padrão tempo de entregas c/ Festival (em mins)', df_aux)
-            
-        with col5:
-            df_aux = avg_std_time_delivery(df1, 'No', 'avg_time')
-            col5.metric('Tempo médio das entregas s/ Festival (em mins)', df_aux)
-            
-        with col6:
-            df_aux = avg_std_time_delivery(df1, 'No', 'std_time')
-            col6.metric('Desvio padrão tempo de entregas s/ Festival (em mins)', df_aux)
-            
-    with st.container():
-        st.markdown("""---""")
-        col1, col2 = st.columns(2)
-
-        with col1:
-            st.markdown('##### Média e desvio padrão do tempo de entrega por cidade (em mins)')
-            fig = avg_std_time_graph(df1)
-            st.plotly_chart(fig)        
-
-        with col2:
-            st.markdown('##### Média e desvio padrão do tempo de entrega por cidade e tipo de pedido (em mins)')
-            df_aux = df1.loc[:, ['Time_taken(min)', 'City', 'Type_of_order']].groupby(['City', 'Type_of_order']).agg({'Time_taken(min)': ['mean', 'std']}) 
-            df_aux.columns = ['avg_time', 'std_time'] 
-            df_aux = df_aux.reset_index()
-            st.dataframe(df_aux)
-            
-    with st.container():
-        st.markdown("""---""")
-        st.title('Distribuição da distância e do tempo das entregas com desvio padrão (em mins)')
-        col1, col2 = st.columns(2)
+    with col2:
+        avg_distance = distance(df1, fig=False)
+        col2.metric('Distância média das entregas (em Km)', avg_distance)
         
-        with col1:              
-            fig = distance(df1, fig=True)
-            st.plotly_chart(fig, use_container_width=True)
-       
-        with col2:
-            fig = avg_std_time_on_traffic(df1)
-            st.plotly_chart(fig, use_container_width=True)                              
-            
+    with col3:
+        df_aux = avg_std_time_delivery(df1, 'Yes', 'avg_time')
+        col3.metric('Tempo médio das entregas c/ Festival (em mins)', df_aux)
+
+    col4, col5, col6 = st.columns(3)
+        
+    with col4:
+        df_aux = avg_std_time_delivery(df1, 'Yes', 'std_time')
+        col4.metric('Desvio padrão tempo de entregas c/ Festival (em mins)', df_aux)
+        
+    with col5:
+        df_aux = avg_std_time_delivery(df1, 'No', 'avg_time')
+        col5.metric('Tempo médio das entregas s/ Festival (em mins)', df_aux)
+        
+    with col6:
+        df_aux = avg_std_time_delivery(df1, 'No', 'std_time')
+        col6.metric('Desvio padrão tempo de entregas s/ Festival (em mins)', df_aux)
+        
+with st.container():
+    st.markdown("""---""")
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.markdown('##### Média e desvio padrão do tempo de entrega por cidade (em mins)')
+        fig = avg_std_time_graph(df1)
+        st.plotly_chart(fig)        
+
+    with col2:
+        st.markdown('##### Média e desvio padrão do tempo de entrega por cidade e tipo de pedido (em mins)')
+        df_aux = df1.loc[:, ['Time_taken(min)', 'City', 'Type_of_order']].groupby(['City', 'Type_of_order']).agg({'Time_taken(min)': ['mean', 'std']}) 
+        df_aux.columns = ['avg_time', 'std_time'] 
+        df_aux = df_aux.reset_index()
+        st.dataframe(df_aux)
+        
+with st.container():
+    st.markdown("""---""")
+    st.title('Distribuição da distância e do tempo das entregas com desvio padrão (em mins)')
+    col1, col2 = st.columns(2)
+    
+    with col1:              
+        fig = distance(df1, fig=True)
+        st.plotly_chart(fig, use_container_width=True)
+   
+    with col2:
+        fig = avg_std_time_on_traffic(df1)
+        st.plotly_chart(fig, use_container_width=True)                              
+        
 
      
 
