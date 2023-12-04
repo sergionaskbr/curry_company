@@ -1,6 +1,6 @@
 # curry_company
 
-O projeto Curry Company visa trabalhar algumas métricas de crescimento a partir dos dados presentes no dataset da empresa indiana Curry Company, uma plataforma de marketplace de food delivery. 
+O projeto Curry Company visa trabalhar algumas métricas de crescimento a partir dos dados presentes no dataset da empresa indiana Curry Company, uma plataforma marketplace de food delivery. 
 
 A estrutura do dataset permitiu vários insights acerca dos números diários de pedidos delivery, quantidade de pedidos por tipo de trânsito, tipo de pedido, por distância entre restaurante e usuário do serviço, tempo de entrega, tipo de região urbana, dados sobre idade e condições dos veículos dos entregadores, avaliação e tempo médio de entrega por entregador, por tipo de pedido/trânsito/clima/cidade, dentre muitas outras variáveis.
 
