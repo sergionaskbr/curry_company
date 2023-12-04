@@ -203,9 +203,6 @@ df1 = df1.loc[linhas_selecionadas, :]
 # Layout da Página Principal do Streamlit - OS COMENTÁRIOS SÃO MUITO IMPORTANTES PARA ORGANIZARMOS NOSSO CÓDIGO!
 # =================
 
-tab1, tab2, tab3 = st.tabs(['Visão Gerencial', '_', '_'])
-
-with tab1:
     with st.container():
         st.title('Overall Metrics')
         col1, col2, col3 = st.columns(3)
