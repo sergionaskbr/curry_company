@@ -239,7 +239,7 @@ with tab1:
         col1, col2 = st.columns(2)
 
         with col1:
-            st.markdown('##### Média e desvio padrão do tempo de entrega por cidade')
+            st.markdown('##### Média e desvio padrão do tempo de entrega por cidade (em mins)')
             fig = avg_std_time_graph(df1)
             st.plotly_chart(fig)        
 
@@ -252,7 +252,7 @@ with tab1:
             
     with st.container():
         st.markdown("""---""")
-        st.title('Distribuição da distância e do tempo das entregas com desvio padrão')
+        st.title('Distribuição da distância e do tempo das entregas com desvio padrão (em mins)')
         col1, col2 = st.columns(2)
         
         with col1:              
