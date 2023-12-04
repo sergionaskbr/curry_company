@@ -208,7 +208,7 @@ tab1, tab2, tab3 = st.tabs(['Visão Gerencial', '_', '_'])
 with tab1:
     with st.container():
         st.title('Overall Metrics')
-        col1, col2, col3, col4, col5, col6 = st.columns(6)
+        col1, col2, col3 = st.columns(3)
         
         with col1:
             delivery_unique = len(df1.loc[:, 'Delivery_person_ID'].unique())
@@ -216,23 +216,25 @@ with tab1:
             
         with col2:
             avg_distance = distance(df1, fig=False)
-            col2.metric('Distância média entregas', avg_distance)
+            col2.metric('Distância média das entregas (em Km)', avg_distance)
             
         with col3:
             df_aux = avg_std_time_delivery(df1, 'Yes', 'avg_time')
-            col3.metric('Tempo médio entrega c/ Festival', df_aux)
+            col3.metric('Tempo médio das entregas c/ Festival (em mins)', df_aux)
+
+        col4, col5, col6 = st.columns(3)
             
         with col4:
             df_aux = avg_std_time_delivery(df1, 'Yes', 'std_time')
-            col4.metric('Desvio padrão entrega c/ Festival', df_aux)
+            col4.metric('Desvio padrão das entregas c/ Festival (em mins)', df_aux)
             
         with col5:
             df_aux = avg_std_time_delivery(df1, 'No', 'avg_time')
-            col5.metric('Tempo médio entrega s/ Festival', df_aux)
+            col5.metric('Tempo médio das entregas s/ Festival (em mins)', df_aux)
             
         with col6:
             df_aux = avg_std_time_delivery(df1, 'No', 'std_time')
-            col6.metric('Desvio padrão entrega s/ Festival', df_aux)
+            col6.metric('Desvio padrão das entrega s/ Festival (em mins)', df_aux)
             
     with st.container():
         st.markdown("""---""")
