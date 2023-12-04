@@ -216,23 +216,23 @@ with tab1:
             
         with col2:
             avg_distance = distance(df1, fig=False)
-            col2.metric('Distância média das entregas', avg_distance)
+            col2.metric('Distância média entregas', avg_distance)
             
         with col3:
             df_aux = avg_std_time_delivery(df1, 'Yes', 'avg_time')
-            col3.metric('Tempo médio de entrega c/ Festival', df_aux)
+            col3.metric('Tempo médio entrega c/ Festival', df_aux)
             
         with col4:
             df_aux = avg_std_time_delivery(df1, 'Yes', 'std_time')
-            col4.metric('Desvio padrão de entrega c/ Festival', df_aux)
+            col4.metric('Desvio padrão entrega c/ Festival', df_aux)
             
         with col5:
             df_aux = avg_std_time_delivery(df1, 'No', 'avg_time')
-            col5.metric('Tempo médio de entrega s/ Festival', df_aux)
+            col5.metric('Tempo médio entrega s/ Festival', df_aux)
             
         with col6:
             df_aux = avg_std_time_delivery(df1, 'No', 'std_time')
-            col6.metric('Desvio padrão de entrega s/ Festival', df_aux)
+            col6.metric('Desvio padrão entrega s/ Festival', df_aux)
             
     with st.container():
         st.markdown("""---""")
