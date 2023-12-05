@@ -1,4 +1,4 @@
-# curry_company
+# Curry Company
 
 O projeto Curry Company visa trabalhar algumas métricas de crescimento a partir dos dados presentes no dataset da empresa indiana Curry Company, uma plataforma marketplace de food delivery. 
 
